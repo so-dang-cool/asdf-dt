@@ -2,7 +2,7 @@
 
 # asdf-dt [![Build](https://github.com/booniepepper/asdf-dt/actions/workflows/build.yml/badge.svg)](https://github.com/booniepepper/asdf-dt/actions/workflows/build.yml) [![Lint](https://github.com/booniepepper/asdf-dt/actions/workflows/lint.yml/badge.svg)](https://github.com/booniepepper/asdf-dt/actions/workflows/lint.yml)
 
-[dt](https://dt.plumbing) plugin for the [asdf version manager](https://asdf-vm.com).
+[dt](https://dt.plumbing) plugin for [rtx](https://github.com/jdx/rtx) and [asdf](https://asdf-vm.com).
 
 </div>
 
@@ -15,22 +15,25 @@
 
 # Dependencies
 
-**TODO: adapt this section**
-
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
 
 # Install
 
-Plugin:
+Install this plugin:
 
 ```shell
-asdf plugin add dt
+rtx plugin add https://github.com/so-dang-cool/asdf-dt.git
 # or
 asdf plugin add dt https://github.com/booniepepper/asdf-dt.git
 ```
 
-dt:
+Use dt (rtx):
+
+```shell
+rtx use dt@latest
+```
+
+Install dt (asdf):
 
 ```shell
 # Show all installable versions
@@ -46,14 +49,14 @@ asdf global dt latest
 dt --version
 ```
 
-Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
-install & manage versions.
+Check [rtx](https://github.com/jdx/rtx) or [asdf](https://github.com/asdf-vm/asdf)
+readme for more instructions on how to install & manage versions.
 
 # Contributing
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/booniepepper/asdf-dt/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/so-dang-cool/asdf-dt/graphs/contributors)!
 
 # License
 
