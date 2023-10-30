@@ -50,9 +50,9 @@ host_zig_triple() {
 download_release() {
 	local version filename url
 	version="$1"
+	filename="$2"
 	
 	url="$GH_REPO/releases/download/v${version}/dt-$(host_zig_triple).tgz"
-	filename="$ASDF_DOWNLOAD_PATH/dt"
 
 	echo "* Downloading $TOOL_NAME release $version (to $filename)"
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
