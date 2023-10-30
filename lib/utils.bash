@@ -33,7 +33,8 @@ list_all_versions() {
 }
 
 host_zig_triple() {
-  case "$(uname -m)" in
+  _arch="$(uname -m)"
+  case "$_arch" in
     arm64) echo -n 'aarch64-' ;;
     amd64) echo -n 'x86_64-'  ;;
     *)     echo -n "$_arch-"  ;;
