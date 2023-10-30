@@ -50,11 +50,11 @@ host_zig_triple() {
 download_release() {
 	local version filename url
 	version="$1"
-	filename="$2"
-
+	
 	url="$GH_REPO/releases/download/v${version}/dt-$(host_zig_triple).tgz"
+	filename="$ASDF_DOWNLOAD_PATH/dt"
 
-	echo "* Downloading $TOOL_NAME release $version..."
+	echo "* Downloading $TOOL_NAME release $version (to $filename)"
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
@@ -69,6 +69,8 @@ install_version() {
 
 	(
 		mkdir -p "$install_path"
+
+		echo "heres the downloda path boss: $ASDF_DOWNLOAD_PATH"
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
 		# TODO: Assert dt executable exists.
