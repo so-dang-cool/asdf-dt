@@ -33,25 +33,25 @@ list_all_versions() {
 }
 
 host_zig_triple() {
-  _arch="$(uname -m)"
-  case "$_arch" in
-    arm64) echo -n 'aarch64-' ;;
-    amd64) echo -n 'x86_64-'  ;;
-    *)     echo -n "$_arch-"  ;;
-  esac
+	_arch="$(uname -m)"
+	case "$_arch" in
+	arm64) echo -n 'aarch64-' ;;
+	amd64) echo -n 'x86_64-' ;;
+	*) echo -n "$_arch-" ;;
+	esac
 
-  case "$(uname -s | tr A-Z a-z)" in
-    linux) echo -n 'linux-gnu' ;;
-    *bsd)  echo -n 'linux-gnu' ;;
-    osx | darwin | mac*) echo -n 'macos-none' ;;
-  esac
+	case "$(uname -s | tr A-Z a-z)" in
+	linux) echo -n 'linux-gnu' ;;
+	*bsd) echo -n 'linux-gnu' ;;
+	osx | darwin | mac*) echo -n 'macos-none' ;;
+	esac
 }
 
 download_release() {
 	local version filename url
 	version="$1"
 	filename="$2"
-	
+
 	url="$GH_REPO/releases/download/v${version}/dt-$(host_zig_triple).tgz"
 
 	echo "* Downloading $TOOL_NAME release $version (to $filename)"
