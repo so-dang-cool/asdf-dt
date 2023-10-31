@@ -19,11 +19,12 @@ host_zig_triple() {
 	esac
 }
 
-url="$GH_REPO/releases/download/v${ASDF_INSTALL_VERSION}/dt-$(host_zig_triple).tgz"
+tarball="dt-$(host_zig_triple).tgz"
+url="https://github.com/so-dang-cool/dt/releases/download/v${ASDF_INSTALL_VERSION}/${tarball}"
 
 curl "$url" \
     -o "$ASDF_DOWNLOAD_PATH/" \
     -C -
 
-tar -xzf "$release_file" \
+tar -xzf "$tarball" \
     -C "$ASDF_DOWNLOAD_PATH"
