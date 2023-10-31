@@ -70,7 +70,6 @@ install_version() {
 	(
 		mkdir -p "$install_path"
 
-		echo "heres the downloda path boss: $ASDF_DOWNLOAD_PATH"
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
 		# TODO: Assert dt executable exists.
