@@ -4,6 +4,8 @@ set -eux
 
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
+cd "$ASDF_DOWNLOAD_PATH"
+
 host_zig_triple() {
 	_arch="$(uname -m)"
 	case "$_arch" in
@@ -20,11 +22,7 @@ host_zig_triple() {
 }
 
 tarball="dt-$(host_zig_triple).tgz"
-url="https://github.com/so-dang-cool/dt/releases/download/v${ASDF_INSTALL_VERSION}/${tarball}"
+url="https://github.com/so-dang-cool/dt/releases/download/v$ASDF_INSTALL_VERSION/$tarball"
 
-curl "$url" \
-    -o "$ASDF_DOWNLOAD_PATH/" \
-    -C -
-
-tar -xzf "$tarball" \
-    -C "$ASDF_DOWNLOAD_PATH"
+curl -L "$url" -o "$tarball"
+tar -xzf "$tarball"
