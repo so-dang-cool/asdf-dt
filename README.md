@@ -6,8 +6,7 @@
 
 - [Dependencies](#dependencies)
 - [Install](#install)
-- [Contributing](#contributing)
-- [License](#license)
+- [Etc](#etc)
 
 # Dependencies
 
@@ -48,13 +47,9 @@ dt --version
 Check [rtx](https://github.com/jdx/rtx) or [asdf](https://github.com/asdf-vm/asdf)
 readme for more instructions on how to install & manage versions.
 
-# Contributing
+# Etc
 
-Contributions of any kind welcome! See the [contributing guide](contributing.md).
+[BSD 3 Clause](LICENSE)
 
-[Thanks goes to these contributors](https://github.com/so-dang-cool/asdf-dt/graphs/contributors)!
-
-# License
-
-See [LICENSE](LICENSE) © [J.R. Hill](https://github.com/booniepepper)
+A side quest of [J.R. Hill](https://so.dang.cool)
 
