@@ -1,10 +1,6 @@
-<div align="center">
-
-# asdf-dt [![Build](https://github.com/booniepepper/asdf-dt/actions/workflows/build.yml/badge.svg)](https://github.com/booniepepper/asdf-dt/actions/workflows/build.yml) [![Lint](https://github.com/booniepepper/asdf-dt/actions/workflows/lint.yml/badge.svg)](https://github.com/booniepepper/asdf-dt/actions/workflows/lint.yml)
+# asdf-dt
 
 [dt](https://dt.plumbing) plugin for [rtx](https://github.com/jdx/rtx) and [asdf](https://asdf-vm.com).
-
-</div>
 
 # Contents
 
@@ -60,4 +56,5 @@ Contributions of any kind welcome! See the [contributing guide](contributing.md)
 
 # License
 
-See [LICENSE](LICENSE) © [J.R. Hill](https://github.com/booniepepper/)
+See [LICENSE](LICENSE) © [J.R. Hill](https://github.com/booniepepper)
+
