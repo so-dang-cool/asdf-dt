@@ -3,6 +3,6 @@
 set -euo pipefail
 
 curl https://github.com/so-dang-cool/dt/releases.atom 2>/dev/null \
-  | grep \<id\> \
+  | grep '<id>' \
   | awk '/<id>.+\/v/ { sub(/.+\/v/, ""); sub(/<.+>/, ""); print $1 }' \
-  | tac
+  | sed '1!G;h;$!d'
