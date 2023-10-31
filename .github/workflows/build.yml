@@ -8,7 +8,7 @@ on:
 
 jobs:
   plugin_test:
-    name: asdf plugin test
+    name: plugin test
     strategy:
       matrix:
         os:
