@@ -1,4 +1,4 @@
-name: Build
+name: Test
 
 on:
   push:
@@ -7,8 +7,18 @@ on:
   pull_request:
 
 jobs:
-  plugin_test:
-    name: plugin test
+  shellcheck:
+    name: shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/rtx-action@v1
+      - run: |-
+          rtx install
+          shellcheck bin/*
+
+  rtx_test:
+    name: rtx test
     strategy:
       matrix:
         os:
@@ -16,7 +26,26 @@ jobs:
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - name: asdf_plugin_test
-        uses: asdf-vm/actions/plugin-test@v3
-        with:
-          command: 'dt --version'
+      - uses: actions/checkout@v4
+      - uses: jdx/rtx-action@v1
+      - run: |-
+          rtx plugin add "file://$PWD"
+          rtx use dt@latest
+          rtx x -- dt --version
+
+  asdf_test:
+    name: asdf test
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: asdf-vm/actions/install@v2
+      - run: |-
+          asdf plugin add dt .
+          asdf install dt latest
+          asdf local dt latest
+          asdf exec dt --version
