@@ -12,6 +12,7 @@
 
 - [curl](https://curl.se)
 - [POSIX utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
+  - If `pax` is not found, `tar` will be used
 
 # Install
 

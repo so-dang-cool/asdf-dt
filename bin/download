@@ -21,6 +21,15 @@ host_zig_triple() {
 	esac
 }
 
-url="https://github.com/so-dang-cool/dt/releases/download/v$ASDF_INSTALL_VERSION/dt-$(host_zig_triple).tgz"
+tarball="dt-$(host_zig_triple).tgz"
+url="https://github.com/so-dang-cool/dt/releases/download/v$ASDF_INSTALL_VERSION/$tarball"
 
-curl -L "$url" | pax -rz
+curl -L "$url" -o "$tarball"
+
+if command -v tar >>/dev/null
+then
+  tar -xzf "$tarball"
+elif command -v pax >>/dev/null
+then
+  pax -rzf "$tarball"
+fi
