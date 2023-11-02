@@ -1,4 +1,6 @@
-name: Test
+# This is testing scriptsand not "building" anything, but I found that
+# asdf-vm/asdf-plugins really wants to see a workflow called "Build"
+name: Build
 
 on:
   push:
