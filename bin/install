@@ -11,5 +11,3 @@ fi
 mkdir -p "$ASDF_INSTALL_PATH/bin"
 
 cp "$ASDF_DOWNLOAD_PATH"/dt "$ASDF_INSTALL_PATH/bin/dt"
-
-"$ASDF_INSTALL_PATH/bin/dt" --version
