@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-set -euo pipefail
+set -eu
 
 curl https://github.com/so-dang-cool/dt/releases.atom 2>/dev/null \
   | grep '<id>' \

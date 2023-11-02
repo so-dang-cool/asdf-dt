@@ -1,28 +1,26 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -eux
 
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
-cd "$ASDF_DOWNLOAD_PATH"
+cd "$ASDF_DOWNLOAD_PATH" || exit 1
 
 host_zig_triple() {
 	_arch="$(uname -m)"
 	case "$_arch" in
-	arm64) echo -n 'aarch64-' ;;
-	amd64) echo -n 'x86_64-' ;;
-	*) echo -n "$_arch-" ;;
+	arm64) printf 'aarch64-' ;;
+	amd64) printf 'x86_64-' ;;
+	*) printf '%s' "$_arch-" ;;
 	esac
 
-	case "$(uname -s | tr A-Z a-z)" in
-	linux) echo -n 'linux-gnu' ;;
-	*bsd) echo -n 'linux-gnu' ;;
-	osx | darwin | mac*) echo -n 'macos-none' ;;
+	case "$(uname -s | tr '[:upper:]' '[:lower:]')" in
+	linux) printf 'linux-gnu' ;;
+	*bsd) printf 'linux-gnu' ;;
+	osx | darwin | mac*) printf 'macos-none' ;;
 	esac
 }
 
-tarball="dt-$(host_zig_triple).tgz"
-url="https://github.com/so-dang-cool/dt/releases/download/v$ASDF_INSTALL_VERSION/$tarball"
+url="https://github.com/so-dang-cool/dt/releases/download/v$ASDF_INSTALL_VERSION/dt-$(host_zig_triple).tgz"
 
-curl -L "$url" -o "$tarball"
-tar -xzf "$tarball"
+curl -L "$url" | pax -rz
