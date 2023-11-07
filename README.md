@@ -53,5 +53,4 @@ readme for more instructions on how to install & manage versions.
 
 [BSD 3 Clause](LICENSE)
 
-A side quest of [J.R. Hill](https://so.dang.cool)
-
+Upstream project: [dt](https://dt.plumbing)
