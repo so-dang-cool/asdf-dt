@@ -1,6 +1,6 @@
 # asdf-dt
 
-[dt](https://dt.plumbing) plugin for [rtx](https://github.com/jdx/rtx) and [asdf](https://asdf-vm.com).
+[dt](https://dt.plumbing) plugin for [mise](https://github.com/jdx/mise) and [asdf](https://asdf-vm.com).
 
 # Contents
 
@@ -19,15 +19,15 @@
 Install this plugin:
 
 ```shell
-rtx plugin add https://github.com/so-dang-cool/asdf-dt.git
+mise plugin add https://github.com/so-dang-cool/asdf-dt.git
 # or
 asdf plugin add dt https://github.com/booniepepper/asdf-dt.git
 ```
 
-Use dt (rtx):
+Use dt (mise):
 
 ```shell
-rtx use dt@latest
+mise use dt@latest
 ```
 
 Install dt (asdf):
@@ -46,7 +46,7 @@ asdf global dt latest
 dt --version
 ```
 
-Check [rtx](https://github.com/jdx/rtx) or [asdf](https://github.com/asdf-vm/asdf)
+Check [mise](https://github.com/jdx/mise) or [asdf](https://github.com/asdf-vm/asdf)
 readme for more instructions on how to install & manage versions.
 
 # Etc
